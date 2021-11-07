@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<SerbestKurlar>
+    <html>
+    <head>
+        <link href="~/css/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.ActionLink("Serbest Kurlar", "Index", "Home")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Internet Kurları", "InternetKurlari", "Home")
+                    </th>
+                    <th>
+                        @Html.ActionLink("Marbas Pariteleri", "MarbasPariteleri", "Home")
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Doviz)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DovizKodu)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CaprazKur)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DovizAlis)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DovizSatis)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EfektifAlis)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EfektifSatis)
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var b in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.Doviz)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.DovizKodu)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.CaprazKur)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.DovizAlis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.DovizSatis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.EfektifAlis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => b.EfektifSatis)
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </body>
+    </html>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

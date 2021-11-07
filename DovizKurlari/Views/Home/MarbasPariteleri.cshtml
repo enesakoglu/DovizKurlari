@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Marbas Pariteleri";
+}
+@model IEnumerable<MarbasPariteleri>
+<html>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.ActionLink("Serbest Kurlar", "Index", "Home")
+                </th>
+                <th>
+                    @Html.ActionLink("Internet Kurları", "InternetKurlari", "Home")
+                </th>
+                <th>
+                    @Html.ActionLink("Marbas Pariteleri", "MarbasPariteleri", "Home")
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PariteCinsi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlisParitesi)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SatisParitesi)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var b in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => b.PariteCinsi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.AlisParitesi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => b.SatisParitesi)
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</body>
+</html>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
